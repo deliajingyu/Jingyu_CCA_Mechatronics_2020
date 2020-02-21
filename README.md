@@ -3,6 +3,9 @@ homework
 
 # week 1
 ![week1](/image/Week_1_01.png)
+# week 2
+![week2](/image/Week_2_04.png)
+![week2](/image/Week_2_05.png)
 # week 3
 ![week3](/image/IMG_1525_4.gif)
 # week 4
