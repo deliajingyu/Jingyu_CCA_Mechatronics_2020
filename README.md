@@ -59,3 +59,44 @@ void loop() {
        
 }
 ```
+# week 5
+![week5](/image/sensor_led.gif)
+```cpp
+int outputValue=0;
+void setup() {
+  // put your setup code here, to run once:
+ Serial.begin(9600);
+ pinMode(A0,INPUT);
+}
+
+void loop() {
+  // put your main code here, to run repeatedly:
+ int sensorValue = analogRead(A0);
+ Serial.print("sensorValue; ");
+ Serial.print(sensorValue);
+ delay(1);
+
+ outputValue = constrain(sensorValue, 30, 80);
+ outputValue = map(outputValue, 30, 80, 255, 0);
+ analogWrite(9, outputValue);
+ delay(100);
+
+outputValue = constrain(sensorValue, 30, 80);
+ outputValue = map(outputValue, 30, 80, 255, 0);
+ analogWrite(10, outputValue);
+ delay(100);
+
+ outputValue = constrain(sensorValue, 30, 80);
+ outputValue = map(outputValue, 30, 80, 255, 0);
+ analogWrite(11, outputValue);
+delay(100);
+
+  outputValue = constrain(sensorValue, 30, 80);
+ outputValue = map(outputValue, 30, 80, 255, 0);
+ analogWrite(12, outputValue);
+ 
+ Serial.print("\t outputValue; ");
+ Serial.println(outputValue);
+ delay(1);
+}
+```
