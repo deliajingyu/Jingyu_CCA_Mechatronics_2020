@@ -100,3 +100,43 @@ delay(100);
  delay(1);
 }
 ```
+![week5](/image/sensor_led2.gif)
+```cpp
+int outputValue=0;
+void setup() {
+  // put your setup code here, to run once:
+ Serial.begin(9600);
+ pinMode(A0,INPUT);
+}
+
+void loop() {
+  // put your main code here, to run repeatedly:
+ int sensorValue = analogRead(A0);
+ Serial.print("sensorValue; ");
+ Serial.print(sensorValue);
+ delay(1);
+
+ outputValue = constrain(sensorValue, 30, 50);
+ outputValue = map(outputValue, 30, 50, 255, 0);
+ analogWrite(9, outputValue);
+delay(100);
+
+outputValue = constrain(sensorValue, 50, 100);
+ outputValue = map(outputValue, 50, 100, 255, 0);
+ analogWrite(10, outputValue);
+ delay(100);
+
+ outputValue = constrain(sensorValue, 100, 150);
+ outputValue = map(outputValue, 100, 150, 255, 0);
+ analogWrite(11, outputValue);
+delay(100);
+
+  outputValue = constrain(sensorValue, 150, 200);
+ outputValue = map(outputValue, 150, 200, 255, 0);
+ analogWrite(12, outputValue);
+ 
+ Serial.print("\t outputValue; ");
+ Serial.println(outputValue);
+ delay(1);
+}
+```
