@@ -140,3 +140,31 @@ delay(100);
  delay(1);
 }
 ```
+
+# week 6
+![week6](/image/sensor_motor2.gif)
+```cpp
+int outputValue=0;
+void setup() {
+  // put your setup code here, to run once:
+ Serial.begin(9600);
+ pinMode(A0,INPUT);
+}
+
+void loop() {
+  // put your main code here, to run repeatedly:
+ int sensorValue = analogRead(A0);
+ Serial.print("sensorValue; ");
+ Serial.print(sensorValue);
+
+
+ outputValue = constrain(sensorValue, 900, 1000);
+ outputValue = map(outputValue, 1000, 900, 500, 0);
+ analogWrite(9, outputValue);
+
+
+Serial.print("\t outputValue; ");
+ Serial.println(outputValue);
+ delay(1);
+}
+```
