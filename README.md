@@ -170,16 +170,18 @@ Serial.print("\t outputValue; ");
 ```
 
 # week 10 Midterm Project
--image of first version
-I tried to use gears to connect the dragon dance machine and the motor.
-The motor can not provide enough power to drive the dragon dance machine in this version.
+-image of first version  
+I tried to use gears to connect the dragon dance machine and the motor.  
+The motor can not provide enough power to drive the dragon dance machine in this version.  
 ![week10](/image/IMG_1683.jpg)
 
--image of second version
-I used bluetape toconnect motor and dragon dance machine.
-I test it with battries.
+-image of second version  
+I used bluetape toconnect motor and dragon dance machine.  
+I test it with battries.  
 ![week10](/image/test1.gif)
 
--image of third version
-Connect dragon dance machine with UNO board.
+-image of third version  
+Connect dragon dance machine with UNO board.  
 ![week10](/image/test2.gif)
+
+-[Youtube Video](https://www.youtube.com/watch?v=KcEAxE8rQ0Y)
