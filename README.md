@@ -185,3 +185,7 @@ Connect dragon dance machine with UNO board.
 ![week10](/image/test2.gif)
 
 -[Youtube Video](https://www.youtube.com/watch?v=KcEAxE8rQ0Y)
+
+# week 11
+-sketch for final project  
+![week11](/image/sketch_for_final.png)
