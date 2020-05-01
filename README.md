@@ -189,5 +189,5 @@ Connect dragon dance machine with UNO board.
 # week 11
 - sketch for final project  
 ![week11](/final//Week1/IMG_0242.PNG)
-I want to add more function
+
 ![week11](/final//Week1/IMG_0241.PNG)
