@@ -197,4 +197,4 @@ So I plan to use IR remote control to start it and then change the speed of it a
 
 ![week11](/final//Week2/IMG_1792.jpeg)
 
-- [Control LED light with remote control](https://www.youtube.com/watch?v=KcEAxE8rQ0Y)
+- [Control LED light with remote control](https://youtu.be/T26Hd_U4Uo4)
