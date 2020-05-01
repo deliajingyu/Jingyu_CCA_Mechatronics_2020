@@ -192,6 +192,6 @@ Connect dragon dance machine with UNO board.
 
 ![week11](/final//Week1/IMG_0241.PNG)
 
-![week11](/final//Week2/IMG_1791.HEIC)
+![week11](/final//Week2/IMG_1791.jpeg)
 
-![week11](/final//Week2/IMG_1791.HEIC)
+![week11](/final//Week2/IMG_1792.jpeg)
