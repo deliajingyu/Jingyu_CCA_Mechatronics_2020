@@ -201,7 +201,10 @@ So I plan to use IR remote control to start it and then change the speed of it a
 I tried to control LED light with remote control. But it doesn't work so well. The remote control can not work stably, and that cause a lot of problem for further development.  
 - [Control LED light with remote control](https://youtu.be/T26Hd_U4Uo4)
 
-- Use ultrasonic sensor to control the speed of dragon dance machine
+- Use ultrasonic sensor to control the speed of dragon dance machine  
 I tried to use ultrasonic sensor to control the speed of dragon dance machine, but the speed didn't change at all.  
 I took a long time and found out that I need to press the button every time I want to change the speed of it.
-- [The speed of dragon dance machine doesn't change](https://youtu.be/lm0o3Ums7AU)
+- [The speed of dragon dance machine doesn't change](https://youtu.be/lm0o3Ums7AU)  
+
+- Final Project Video  
+- [Final Project Video](https://youtu.be/lm0o3Ums7AU)  
