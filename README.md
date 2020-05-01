@@ -189,9 +189,9 @@ Connect dragon dance machine with UNO board.
 # week 11
 - sketch for final project  
 ![week11](/final//Week1/IMG_0242.PNG)
-
+At beginning, I want to keep the photoresistor to sense the brightness of light and then start or stop the draagon dance machine. But this is almostthe same as what I did for midterm project. I want to have somethin new for the final.  
 ![week11](/final//Week1/IMG_0241.PNG)
-
+So I plan to use IR remote control to start and stop it and change the speed of it according to the distance between people who using it.  
 ![week11](/final//Week2/IMG_1791.jpeg)
 
 ![week11](/final//Week2/IMG_1792.jpeg)
