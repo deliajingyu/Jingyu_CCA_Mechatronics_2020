@@ -184,7 +184,7 @@ I test it with battries.
 Connect dragon dance machine with UNO board.  
 ![week10](/image/test2.gif)
 
-- [Youtube Video](https://www.youtube.com/watch?v=KcEAxE8rQ0Y)
+- [Midterm Project](https://www.youtube.com/watch?v=KcEAxE8rQ0Y)
 
 # week 11
 - Sketch for final project  
@@ -192,9 +192,16 @@ Connect dragon dance machine with UNO board.
 At beginning, I want to keep the photoresistor to sense the brightness of light and then start or stop the dragon dance machine. But this is almost the same as what I did for midterm project. I want to have something new for the final.  
 ![week11](/final//Week1/IMG_0241.PNG)
 So I plan to use IR remote control to start it and then change the speed of it according to the distance between it and people who using it.  
+
 - Try to control a led light with IR remote control
 ![week11](/final//Week2/IMG_1791.jpeg)
 
 ![week11](/final//Week2/IMG_1792.jpeg)
 
+I tried to control LED light with remote control. But it doesn't work so well. The remote control can not work stably, and that cause a lot of problem for further development.  
 - [Control LED light with remote control](https://youtu.be/T26Hd_U4Uo4)
+
+- Use ultrasonic sensor to control the speed of dragon dance machine
+I tried to use ultrasonic sensor to control the speed of dragon dance machine, but the speed didn't change at all.  
+I took a long time and found out that I need to press the button every time I want to change the speed of it.
+- [The speed of dragon dance machine doesn't change](https://youtu.be/lm0o3Ums7AU)
