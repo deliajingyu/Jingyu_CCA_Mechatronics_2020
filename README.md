@@ -207,4 +207,4 @@ I took a long time and found out that I need to press the button every time I wa
 - [The speed of dragon dance machine doesn't change](https://youtu.be/lm0o3Ums7AU)  
 
 - Final Project Video  
-- [Final Project Video](https://youtu.be/lm0o3Ums7AU)  
+- [Final Project Video](https://www.youtube.com/watch?v=r9gRIa30qtI)  
