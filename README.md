@@ -199,11 +199,186 @@ So I plan to use IR remote control to start it and then change the speed of it a
 ![week11](/final//Week2/IMG_1792.jpeg)
 
 I tried to control LED light with remote control. But it doesn't work so well. The remote control can not work stably, and that cause a lot of problem for further development.  
+- Code 1  
+```cpp
+#include <IRremote.h>
+const int RECV_PIN = 4;
+const int redPin = 8;
+
+int togglestate = 0;  // this toggle state never gets changed so it will always be 0
+
+unsigned long key_value = 0;
+
+IRrecv irrecv(RECV_PIN);
+decode_results results;
+
+void setup() {
+  irrecv.enableIRIn();
+  pinMode(redPin, OUTPUT);
+  
+}
+void loop(){
+
+  // This code will print out the values received from the remote controller.
+  // you can use this to determine what codes are sent by each remote control button
+  
+    if (irrecv.decode(&results)){
+        Serial.println(results.value, HEX);
+        irrecv.resume();
+    }
+
+  
+    // code taken from https://www.circuitbasics.com/arduino-ir-remote-receiver-tutorial/
+    if (irrecv.decode(&results)){
+ 
+        if (results.value == 0XFFFFFFFF)
+          results.value = key_value;
+
+        switch(results.value){
+          case 0xFFA25D:
+          Serial.println("Jingyu button 1");
+          // add other functions here to execute when this button is pushed
+          // such as:
+              digitalWrite(redPin, HIGH);
+          break;
+          case 0xFF30CF:
+          Serial.println("Jingyu button 2");
+          // add other functions here to execute when this button is pushed
+              digitalWrite(redPin, LOW);
+          break;
+          case 0xFF18E7:
+          Serial.println("Jingyu button 3");
+          // add other functions here to execute when this button is pushed
+          break;
+          case 0xFFFFFFF:
+          Serial.println("nothing?");
+          break;
+        }
+        key_value = results.value;
+        irrecv.resume(); 
+    }
+    
+//  // develop this code later - once you've figured out what code your remote is sending  
+//  if (irrecv.decode(&results)){
+//    
+//    switch(results.value){
+//      case 0xFFA250:
+//      if (togglestate==0){
+//        digitalWrite(redPin, HIGH);
+//        togglestate=1;}
+//        else {
+//          digitalWrite(redPin, LOW);
+//          togglestate=0;}
+//          break;
+//      }
+//    irrecv.resume();
+//    }
+
+
+}
+```
 - [Control LED light with remote control](https://youtu.be/T26Hd_U4Uo4)
 
 - Use ultrasonic sensor to control the speed of dragon dance machine  
 I tried to use ultrasonic sensor to control the speed of dragon dance machine, but the speed didn't change at all.  
-I took a long time and found out that I need to press the button every time I want to change the speed of it.
+I took a long time and found out that I need to press the button every time I want to change the speed of it.  
+- Code 2  
+```cpp
+#include <IRremote.h>
+const int RECV_PIN = 4;
+const int redPin = 8;
+int outputValue=0;
+int togglestate = 0;
+
+const int motorPin = 9;  //
+int motorspeed = 100;
+
+IRrecv irrecv(RECV_PIN);
+decode_results results;
+int trigPin = 7;    // Trigger
+int echoPin = 6;    // Echo
+long duration, cm;
+
+void setup() {
+  irrecv.enableIRIn();
+  pinMode(redPin, OUTPUT);
+  pinMode(motorPin, OUTPUT);
+  Serial.begin (9600);
+  //Define inputs and outputs
+  pinMode(trigPin, OUTPUT);
+  pinMode(echoPin, INPUT);
+}
+
+void loop() {
+  if (irrecv.decode(&results)){  
+        switch(results.value){
+          case 0xFFA25D:
+              Serial.print("Jingyu button 1");
+              Serial.println("\t Ready to start");  
+              digitalWrite(redPin, HIGH);
+              analogWrite(motorPin, 0);  // set motor speed to 0 = OFF
+          break;
+         
+          case 0xFF30CF:
+              Serial.println("Jingyu button 2: MOTOR ON");
+               digitalWrite(trigPin, LOW);
+              // if this analogWrite command is in this location, the motor will run when this button is pushed 
+              // it will be controlled by remote control - the speed will be controlled by the unltrasonic sensor
+              analogWrite(motorPin, motorspeed);             
+              digitalWrite(redPin, LOW);
+          break;
+          case 0xFF18E7:
+              Serial.print("Jingyu button 3: ");
+              Serial.println("\t What is supposed to happen when this button is pushed?!?");   // answer the question if you want help with this!
+              // add other functions here to execute when this button is pushed
+              analogWrite(motorPin, 0); // set motor speed to 0 = OFF
+            break;
+          case 0xFFFFFFF:
+              Serial.println("nothing?");
+              //analogWrite(motorPin, 0); // set motor speed to 0 = OFF
+              digitalWrite(redPin, HIGH);
+              analogWrite(motorPin, 0);  // set motor speed to 0 = OFF
+          break;     
+      }
+    irrecv.resume();
+    }
+
+
+// ULTRASONIC SENSOR CODE ==============================================
+// The sensor is triggered by a HIGH pulse of 10 or more microseconds.
+  // Give a short LOW pulse beforehand to ensure a clean HIGH pulse:
+  digitalWrite(trigPin, LOW);
+  delayMicroseconds(5);
+  digitalWrite(trigPin, HIGH);
+  delayMicroseconds(10);
+  digitalWrite(trigPin, LOW);
+ 
+  // Read the signal from the sensor: a HIGH pulse whose
+  // duration is the time (in microseconds) from the sending
+  // of the ping to the reception of its echo off of an object.
+  pinMode(echoPin, INPUT);
+  duration = pulseIn(echoPin, HIGH);
+ 
+// Convert the time into a distance
+  cm = (duration/2) / 29.1;     // Divide by 29.1 or multiply by 0.0343
+ 
+  Serial.print(cm);
+  Serial.println("cm");
+ 
+  outputValue = constrain(cm, 5, 200); 
+  outputValue = map(outputValue, 5, 200, 59, 200); 
+  motorspeed = outputValue;  // assuming that the ultrasonic sensor is supposed to control speed this value will control the motor speed
+
+    Serial.print("motorspeed: ");
+    Serial.println(motorspeed);  // use these println to debug the code - this value should be always changing.
+  
+  delay(250);
+
+// ULTRASONIC SENSOR CODE ==============================================
+    
+ 
+}
+```
 - [The speed of dragon dance machine doesn't change](https://youtu.be/lm0o3Ums7AU)  
 
 - Final Project Video  
